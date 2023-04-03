@@ -1,0 +1,61 @@
+const teamMembers = [
+  {
+    nome: "A. Einstein",
+    ruolo: "Project Manager",
+    foto: "https://www.keblog.it/wp-content/uploads/2018/09/foto-storiche-personaggi-famosi-colorate-mario-unger-08.jpg"
+  },
+  {
+    nome: "A. Merkel",
+    ruolo: "Front-end Developer",
+    foto: "https://www.hdg.de/lemo/img/galeriebilder/biografien/merkel-angela_foto_LEMO-F-5-052_bbst.jpg"
+  },
+  {
+    nome: "E. Musk",
+    ruolo: "Back-end Developer",
+    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+  },
+  {
+    nome: "S. Freud",
+    ruolo: "Data Analyst",
+    foto: "https://image.geo.de/30042190/t/mP/v3/w960/r0/-/freud-gross-jpg--17110-.jpg"
+  },
+  {
+    nome: "J. Bezos",
+    ruolo: "Full-Stack Developer",
+    foto: "https://image.stern.de/30602012/t/Jr/v2/w1440/r1.7778/-/amazon-bezos.jpg"
+  },
+  {
+    nome: "B. Dylan",
+    ruolo: "Back-end Developer",
+    foto: "https://www.br-klassik.de/lyrik-von-bob-dylan-planetenwellen-106~_v-img__16__9__xl_-d31c35f8186ebeb80b0cd843a7c267a0e0c81647.jpg?version=c9b8f"
+  }
+];
+
+// Milestone 1
+for (let member of teamMembers) {
+  console.log(member.nome);
+  console.log(member.ruolo);
+  console.log(member.foto);
+}
+
+// Milestone 2
+const teamMembersDiv = document.getElementById("team-members");
+
+for (let member of teamMembers) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const image = document.createElement("img");
+  image.src = member.foto;
+  card.appendChild(image);
+
+  const name = document.createElement("h2");
+  name.textContent = member.nome;
+  card.appendChild(name);
+
+  const role = document.createElement("p");
+  role.textContent = member.ruolo;
+  card.appendChild(role);
+
+  teamMembersDiv.appendChild(card);
+}
